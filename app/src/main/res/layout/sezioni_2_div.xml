@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,10 +10,10 @@
         android:id='@+id/Docente1_1'
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="80dp"
         android:rotationX="-350"
-        android:text="Docente: "
+        android:text="@string/doc_name"
         android:textColor="#000000"
         android:textSize="28sp" />
 
@@ -23,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginLeft="35dp"
-        android:layout_toRightOf="@id/Docente1_1"
+        android:layout_marginStart="35dp"
+        android:layout_toEndOf="@id/Docente1_1"
         android:rotationX="-350"
         android:text=""
         android:textColor="#000000"
@@ -36,9 +35,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Docente1_1"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="10dp"
-        android:text="Selezionare sezione:"
+        android:text="@string/sei_name"
         android:textColor="#000000"
         android:textSize="18sp" />
 
@@ -46,48 +45,48 @@
         android:id="@+id/button_a"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="180dp"
         android:background="@drawable/custom_button"
-        android:text="A"
-        android:textSize="50dp"
+        android:text="@string/a_name"
+        android:textSize="50sp"
         android:textColor="#FFFFFF" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/button_b"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="180dp"
-        android:layout_toRightOf="@id/button_a"
+        android:layout_toEndOf="@id/button_a"
         android:background="@drawable/custom_button"
-        android:text="B"
-        android:textSize="50dp"
+        android:text="@string/b_name"
+        android:textSize="50sp"
         android:textColor="#FFFFFF" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/button_c"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="33dp"
         android:layout_below="@id/button_a"
         android:background="@drawable/custom_button"
-        android:text="C"
-        android:textSize="50dp"
+        android:text="@string/c_name"
+        android:textSize="50sp"
         android:textColor="#FFFFFF" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/button_d"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="33dp"
         android:layout_below="@id/button_b"
-        android:layout_toRightOf="@id/button_c"
+        android:layout_toEndOf="@id/button_c"
         android:background="@drawable/custom_button"
-        android:text="D"
-        android:textSize="50dp"
+        android:text="@string/d_name"
+        android:textSize="50sp"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>

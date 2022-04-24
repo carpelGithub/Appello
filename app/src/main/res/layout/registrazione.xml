@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.example.appello.registrazione">
 
     <TextView
         android:id="@+id/log"
@@ -14,8 +14,8 @@
         android:layout_marginTop="60dp"
         android:fontFamily="cursive"
         android:gravity="center"
-        android:text="APPello\nregistrazione"
-        android:textSize="45dp" />
+        android:text="@string/appello_nregistrazione"
+        android:textSize="45sp" />
 
     <TextView
         android:id="@+id/passErr"
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
         android:gravity="center"
-        android:text="      "
+        android:text="@string/spazio_name"
         android:textColor="#FF0000" />
 
     <EditText
@@ -35,9 +35,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
         android:gravity="center"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:inputType="textVisiblePassword"
         android:text=""
+        android:autofillHints="password"
         android:textColorHint="#7C7C7C" />
 
     <EditText
@@ -47,8 +48,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="240dp"
         android:gravity="center"
-        android:hint="Cognome"
+        android:hint="@string/cognome"
         android:inputType="textVisiblePassword"
+        android:autofillHints="password"
         android:textColorHint="#7C7C7C" />
 
     <EditText
@@ -58,8 +60,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="280dp"
         android:gravity="center"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
+        android:autofillHints="password"
         android:textColorHint="#7C7C7C" />
 
     <EditText
@@ -69,8 +72,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="320dp"
         android:gravity="center"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
+        android:autofillHints="password"
         android:textColorHint="#7C7C7C" />
 
     <EditText
@@ -80,31 +84,32 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="360dp"
         android:gravity="center"
-        android:hint="Conferma password"
+        android:hint="@string/conferma_password"
         android:inputType="textPassword"
+        android:autofillHints="password"
         android:textColorHint="#7C7C7C" />
 
     <CheckBox
         android:id="@+id/mostraPass1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="320dp"
-        android:layout_toRightOf="@id/pass1"
-        android:text="Mostra"
+        android:layout_toEndOf="@id/pass1"
+        android:text="@string/mostra_name"
         android:textColor="#7C7C7C"
-        android:textSize="12dp" />
+        android:textSize="12sp" />
 
     <CheckBox
         android:id="@+id/mostraPass2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="360dp"
-        android:layout_toRightOf="@id/pass1"
-        android:text="Mostra"
+        android:layout_toEndOf="@id/pass1"
+        android:text="@string/mostra_name"
         android:textColor="#7C7C7C"
-        android:textSize="12dp" />
+        android:textSize="12sp" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/buttonReg"
@@ -113,7 +118,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="418dp"
         android:background="@drawable/custom_button"
-        android:text="Registrati"
+        android:text="@string/registrati"
         android:textAllCaps="false"
         android:textColor="#FFFFFF" />
 
@@ -122,9 +127,9 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/buttonReg"
-        android:layout_alignLeft="@id/buttonReg"
+        android:layout_marginStart="@id/buttonReg"
         android:gravity="center"
-        android:text="Torna a" />
+        android:text="@string/torna_a" />
 
     <Button
         android:id="@+id/buttonTorna"
@@ -132,9 +137,9 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/buttonReg"
-        android:layout_marginLeft="-20dp"
-        android:layout_toRightOf="@id/torna"
-        android:text="Log in"
+        android:layout_marginStart="-20dp"
+        android:layout_toEndOf="@id/torna"
+        android:text="@string/LogIn1_name"
         android:textAllCaps="false"
         android:textColor="#7C7C7C" />
 

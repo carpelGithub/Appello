@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,10 +10,10 @@
         android:id='@+id/Docente1_1'
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="80dp"
         android:rotationX="-350"
-        android:text="Docente: "
+        android:text="@string/doc_name"
         android:textColor="#000000"
         android:textSize="28sp" />
 
@@ -23,8 +22,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginLeft="35dp"
-        android:layout_toRightOf="@id/Docente1_1"
+        android:layout_marginStart
+
+
+
+
+
+
+
+="35dp"
+        android:layout_toEndOf
+
+
+
+
+="@id/Docente1_1"
         android:rotationX="-350"
         android:text=""
         android:textColor="#000000"
@@ -36,9 +48,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Docente1_1"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart
+
+
+
+
+
+
+
+="35dp"
         android:layout_marginTop="10dp"
-        android:text="Selezionare sezione:"
+        android:text="@string/sel_name"
         android:textColor="#000000"
         android:textSize="18sp" />
 
@@ -46,43 +66,90 @@
         android:id="@+id/button_g"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart
+
+
+
+
+
+
+
+="35dp"
         android:layout_marginTop="180dp"
         android:background="@drawable/custom_button"
-        android:text="G"
+        android:text="@string/g_name"
         android:textColor="#FFFFFF" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/button_h"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart
+
+
+
+
+
+
+
+="20dp"
         android:layout_marginTop="180dp"
-        android:layout_toRightOf="@id/button_g"
+        android:layout_toEndOf
+
+
+
+
+="@id/button_g"
         android:background="@drawable/custom_button"
-        android:text="H"
+        android:text="@string/h_name"
         android:textColor="#FFFFFF" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/button_j"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart
+
+
+
+
+
+
+
+="20dp"
         android:layout_marginTop="180dp"
-        android:layout_toRightOf="@id/button_h"
+        android:layout_toEndOf
+
+
+
+
+="@id/button_h"
         android:background="@drawable/custom_button"
-        android:text="J"
+        android:text="@string/j_name"
         android:textColor="#FFFFFF" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/button_k"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart
+
+
+
+
+
+
+
+="20dp"
         android:layout_marginTop="180dp"
-        android:layout_toRightOf="@id/button_j"
+        android:layout_toEndOf
+
+
+
+
+="@id/button_j"
         android:background="@drawable/custom_button"
-        android:text="K"
+        android:text="@string/k_name"
         android:textColor="#FFFFFF" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
@@ -90,10 +157,18 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_below="@id/button_g"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart
+
+
+
+
+
+
+
+="35dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_button"
-        android:text="L"
+        android:text="@string/l_name"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>

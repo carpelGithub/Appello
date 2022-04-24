@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="APPello\nlogin"
+        android:textSize="45dp" />
+
+    <TextView
+        android:id="@+id/passErr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+        android:gravity="top"
+        android:text="      "
+        android:textColor="#FF0000" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="230dp"
+        android:gravity="center"
+        android:hint="Indirizzo email"
+        android:inputType="textEmailAddress"
+        android:text=""
+        android:textColorHint="#7C7C7C" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp"
+        android:gravity="center"
+        android:hint="Inserisca la password"
+        android:inputType="textPassword"
+        android:textColorHint="#7C7C7C" />
+
+    <Button
+        android:id="@+id/passD"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@id/pass"
+        android:layout_centerHorizontal="true"
+        android:text="Password dimenticata?"
+        android:textAllCaps="false"
+        android:textColor="#7C7C7C"
+        android:textSize="12dp" />
+
+    <CheckBox
+        android:id="@+id/mostraPass"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="270dp"
+        android:layout_toRightOf="@id/pass"
+        android:text="Mostra"
+        android:textColor="#7C7C7C"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/nuovo"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/buttonLog"
+        android:layout_alignRight="@id/buttonLog"
+        android:gravity="center"
+        android:text="Sei un nuovo utente?" />
+
+    <Button
+        android:id="@+id/buttonReg"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/buttonLog"
+        android:layout_marginLeft="-12dp"
+        android:layout_toRightOf="@id/nuovo"
+        android:text="Registrati"
+        android:textAllCaps="false"
+        android:textColor="#7C7C7C" />
+
+    <androidx.constraintlayout.utils.widget.MotionButton
+        android:id="@+id/buttonLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="370dp"
+        android:background="@drawable/custom_button"
+        android:text="Log in"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.Scanner;
+import java.io.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,27 +37,40 @@ public class MainActivity extends AppCompatActivity {
         buttonLog.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                if(username.getText().toString().equals("admin") && pass.getText().toString().equals("admin")){
+                    try  {
+                        boolean isfound = false;
+                        Scanner in = new Scanner(new File(getFilesDir(), "USERDATA.txt"));
 
-                    setContentView(R.layout.pag2) ;
-                    TextView docente = (TextView) findViewById(R.id.Docente) ;
-                    docente.setText(username.getText().toString()) ;
+                        while (in.hasNextLine()) {
+                            String s = in.nextLine();
+                            String[] sArray = s.split(",");
 
-                }
+                            if (username.getText().toString().equals(sArray[0]) && pass.getText().toString().equals(sArray[1])) {
 
-                else{
-                    username.setText("") ;
-                    pass.setText("") ;
-                    TextView passErr = (TextView) findViewById(R.id.passErr) ;
-                    passErr.setText("Credenziali errate!") ;
-                       /* new java.util.Timer().schedule(
-                            new java.util.TimerTask() {
-                                public void run() {
-                                    passErr.setText("") ;
-                                 }
-                             },
-                       4000
-                        );*/
+                                setContentView(R.layout.pag2);
+                                TextView docente = (TextView) findViewById(R.id.Docente);
+                                docente.setText(username.getText().toString());
+                                isfound = true;
+                                break;
+                            }
+                        }
+                        if (!isfound) {
+                            username.setText("");
+                            pass.setText("");
+                            TextView passErr = (TextView) findViewById(R.id.passErr);
+                            passErr.setText("Credenziali errate!");
+                               /* new java.util.Timer().schedule(
+                                    new java.util.TimerTask() {
+                                        public void run() {
+                                            passErr.setText("") ;
+                                         }
+                                     },
+                               4000
+                                );*/
+                        }
+                        in.close();
+                    } catch (FileNotFoundException e) {
+                    e.printStackTrace();
                 }
             }
         }) ;

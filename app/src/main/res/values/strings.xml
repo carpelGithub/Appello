@@ -44,5 +44,6 @@
     <string name="appello_nregistrazione">APPello\nregistrazione</string>
     <string name="m_name">M</string>
     <string name="n_name">N</string>
+    <string name="USERDATA">./app/src/USERDATA.txt</string>
 
 </resources>

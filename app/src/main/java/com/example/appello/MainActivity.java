@@ -37,28 +37,18 @@ public class MainActivity extends AppCompatActivity {
         buttonLog.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                    try  {
-                        boolean isfound = false;
-                        Scanner in = new Scanner(new File(getFilesDir(), "USERDATA.txt"));
+                ReadFromFile rf = new ReadFromFile(getFilesDir().toString(), "USERDATA.txt");
 
-                        while (in.hasNextLine()) {
-                            String s = in.nextLine();
-                            String[] sArray = s.split(",");
+                if (rf.isValidLogin(username, pass)) {
+                    setContentView(R.layout.pag2);
+                    ((TextView)findViewById(R.id.Docente)).setText(username.getText().toString());
+                } else {
+                    username.setText("");
+                    pass.setText("");
+                    ((TextView)findViewById(R.id.passErr)).setText("Credenziali errate!");
+                }
 
-                            if (username.getText().toString().equals(sArray[0]) && pass.getText().toString().equals(sArray[1])) {
 
-                                setContentView(R.layout.pag2);
-                                TextView docente = (TextView) findViewById(R.id.Docente);
-                                docente.setText(username.getText().toString());
-                                isfound = true;
-                                break;
-                            }
-                        }
-                        if (!isfound) {
-                            username.setText("");
-                            pass.setText("");
-                            TextView passErr = (TextView) findViewById(R.id.passErr);
-                            passErr.setText("Credenziali errate!");
                                /* new java.util.Timer().schedule(
                                     new java.util.TimerTask() {
                                         public void run() {
@@ -67,15 +57,9 @@ public class MainActivity extends AppCompatActivity {
                                      },
                                4000
                                 );*/
-                        }
-                        in.close();
-                    } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-            }
-        }) ;
 
+            }} );
 
+        }
 
     }
-}

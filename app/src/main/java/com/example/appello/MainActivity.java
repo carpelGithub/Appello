@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         buttonReg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                setContentView(R.layout.registrazione);
+
+                Intent openRegistrazione = new Intent(MainActivity.this, Registrazione.class);
+                startActivity(openRegistrazione);
             }
 
             });

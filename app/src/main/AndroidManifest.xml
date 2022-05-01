@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APPello">
         <activity
-            android:name=".Registrazione"
+            android:name=".registrazione"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

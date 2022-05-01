@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.appello.registrazione">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/log"
@@ -38,8 +38,8 @@
         android:hint="@string/nome"
         android:inputType="textVisiblePassword"
         android:text=""
-        android:autofillHints="password"
-        android:textColorHint="#7C7C7C" />
+        android:textColorHint="#7C7C7C"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/cognome"
@@ -50,8 +50,8 @@
         android:gravity="center"
         android:hint="@string/cognome"
         android:inputType="textVisiblePassword"
-        android:autofillHints="password"
-        android:textColorHint="#7C7C7C" />
+        android:textColorHint="#7C7C7C"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/email"
@@ -62,8 +62,8 @@
         android:gravity="center"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:autofillHints="password"
-        android:textColorHint="#7C7C7C" />
+        android:textColorHint="#7C7C7C"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/pass1"
@@ -74,8 +74,8 @@
         android:gravity="center"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:autofillHints="password"
-        android:textColorHint="#7C7C7C" />
+        android:textColorHint="#7C7C7C"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/pass2"
@@ -86,15 +86,15 @@
         android:gravity="center"
         android:hint="@string/conferma_password"
         android:inputType="textPassword"
-        android:autofillHints="password"
-        android:textColorHint="#7C7C7C" />
+        android:textColorHint="#7C7C7C"
+        android:autofillHints="" />
 
     <CheckBox
         android:id="@+id/mostraPass1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="320sp"
         android:layout_toEndOf="@id/pass1"
         android:text="@string/mostra_name"
         android:textColor="#7C7C7C"
@@ -104,7 +104,7 @@
         android:id="@+id/mostraPass2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="10sp"
         android:layout_marginTop="360dp"
         android:layout_toEndOf="@id/pass1"
         android:text="@string/mostra_name"
@@ -127,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/buttonReg"
-        android:layout_marginStart="@id/buttonReg"
+        android:layout_alignStart="@id/buttonReg"
         android:gravity="center"
         android:text="@string/torna_a" />
 
@@ -137,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/buttonReg"
-        android:layout_marginStart="-20dp"
+        android:layout_marginStart="-20sp"
         android:layout_toEndOf="@id/torna"
         android:text="@string/LogIn1_name"
         android:textAllCaps="false"

@@ -34,9 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="230dp"
+        android:autofillHints="password"
         android:gravity="center"
         android:hint="@string/ind_name"
-        android:autofillHints="password"
         android:inputType="textEmailAddress"
         android:text=""
         android:textColorHint="#7C7C7C" />
@@ -81,6 +81,8 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/buttonLog"
+        android:layout_marginStart="-179dp"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@id/buttonLog"
         android:gravity="center"
         android:text="@string/nuovostud_name" />
@@ -88,14 +90,15 @@
     <Button
         android:id="@+id/buttonReg"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/buttonLog"
-        android:layout_marginStart="-12dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="9dp"
         android:layout_toEndOf="@id/nuovo"
         android:text="@string/registrati"
         android:textAllCaps="false"
-        android:textColor="#7C7C7C" />
+        android:textColor="#F44336" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/buttonLog"

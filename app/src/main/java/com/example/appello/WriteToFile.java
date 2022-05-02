@@ -3,6 +3,7 @@ package com.example.appello;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 
 public class WriteToFile {
@@ -14,7 +15,7 @@ public class WriteToFile {
         this.nameFile = namef;
         this.directory = dir;
         try{
-            out = new FileWriter(this.directory+this.nameFile);
+            out = new FileWriter (this.directory+this.nameFile, true);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -22,10 +23,11 @@ public class WriteToFile {
     }
 
 
-    public  boolean WriteRegistration(String[] regArray) throws IOException {
+    public  boolean WriteRegistration(String regArray) throws IOException {
         try{
 
-            out.write(regArray.toString());
+            out.append(regArray);
+            out.append("\n");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,7 +35,7 @@ public class WriteToFile {
         finally {
             out.close();
         }
-        return false;
+        return true;
 
     }
 }

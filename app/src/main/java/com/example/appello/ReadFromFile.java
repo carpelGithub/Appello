@@ -1,9 +1,14 @@
 package com.example.appello;
 
+import static com.example.appello.Encryption.createSecretKey;
+import static com.example.appello.Encryption.decrypt;
+
 import android.widget.EditText;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import javax.crypto.spec.SecretKeySpec;
 
 public class ReadFromFile {
 
@@ -28,15 +33,31 @@ public class ReadFromFile {
 
             sArray = in.nextLine().split(",");
 
-            if (username.getText().toString().equals(sArray[0]) && pass.getText().toString().equals(sArray[1])) {
+            if (username.getText().toString().equals(sArray[2]) && pass.getText().toString().equals(decryPassword(sArray[3]))) {
                 in.close();
                 return true;
-
-            }
+        }
         }
         // credenziali errate
         in.close();
         return false;
+
+    }
+
+    public String decryPassword(String pwd){
+        byte[] salt = new String("24358977373").getBytes();
+        int iterationCount = 60000;
+        int keyLength = 128;
+        try {
+
+            SecretKeySpec key = createSecretKey(pwd.toCharArray(), salt, iterationCount, keyLength);
+            return decrypt(pwd, key);
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return "";
+
 
     }
 }

@@ -15,7 +15,7 @@ public class WriteToFile {
         this.nameFile = namef;
         this.directory = dir;
         try{
-            out = new FileWriter (this.directory+this.nameFile, true);
+            out = new FileWriter (this.directory+"/"+this.nameFile, true);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,6 +30,9 @@ public class WriteToFile {
             out.append("\n");
 
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         finally {

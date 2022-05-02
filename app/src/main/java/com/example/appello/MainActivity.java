@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         EditText username = (EditText) findViewById(R.id.username); //username
         EditText pass = (EditText) findViewById(R.id.pass); //password
 
-        ReadFromFile rf = new ReadFromFile(getFilesDir().toString(), "USERDATA.txt");
+        ReadFromFile rf = new ReadFromFile(getFilesDir().toString(), "config.txt");
 
         if (rf.isValidLogin(username, pass)) {
             setContentView(R.layout.pag2);

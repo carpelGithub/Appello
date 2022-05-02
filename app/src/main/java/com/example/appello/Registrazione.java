@@ -1,6 +1,9 @@
 package com.example.appello;
 
 
+import static com.example.appello.Encryption.createSecretKey;
+import static com.example.appello.Encryption.encrypt;
+
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import javax.crypto.spec.SecretKeySpec;
 
 public class Registrazione extends AppCompatActivity {
 
@@ -46,14 +51,14 @@ public class Registrazione extends AppCompatActivity {
 
                     if ( pwd1.getText().toString().equals(pwd2.getText().toString())){
 
-                        WriteToFile rf = new WriteToFile(getFilesDir().toString(), "USERDATA.txt");
+                        WriteToFile rf = new WriteToFile(getFilesDir().toString(), "config.txt");
 
                         List<String> list=new ArrayList<String>();
 
                         list.add(nome.getText().toString());
                         list.add(cognome.getText().toString());
                         list.add(mail.getText().toString());
-                        list.add(pwd1.getText().toString());
+                        list.add(encryPassword(pwd1.getText().toString()));
 
                         String a  = list.stream().collect(Collectors.joining(","));
                         if (rf.WriteRegistration(a))
@@ -63,6 +68,23 @@ public class Registrazione extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }});
+
+    }
+
+    public String encryPassword(String pwd){
+        byte[] salt = new String("24358977373").getBytes();
+        int iterationCount = 60000;
+        int keyLength = 128;
+        try {
+
+            SecretKeySpec key = createSecretKey(pwd.toCharArray(), salt, iterationCount, keyLength);
+            return encrypt(pwd, key);
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return "";
+
 
     }
 }

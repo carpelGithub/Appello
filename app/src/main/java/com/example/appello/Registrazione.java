@@ -57,15 +57,6 @@ public class Registrazione extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             public void onClick(View v) {
                 try{
-    /* code di test OK
-                    String originalPassword = "pino";
-                    System.out.println("Original password: " + originalPassword);
-                    String encryptedPassword = config.encrypt(originalPassword);
-                    System.out.println("Encrypted password: " + encryptedPassword);
-                    String decryptedPassword = config.decrypt(encryptedPassword);
-                    System.out.println("Decrypted password: " + decryptedPassword);
-
-*/
 
                     if ( pwd1.getText().toString().equals(pwd2.getText().toString())){
 

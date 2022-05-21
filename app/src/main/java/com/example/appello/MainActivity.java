@@ -62,16 +62,6 @@ public class MainActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.passErr)).setText("Credenziali errate!");
         }
 
-
-                               /* new java.util.Timer().schedule(
-                                    new java.util.TimerTask() {
-                                        public void run() {
-                                            passErr.setText("") ;
-                                         }
-                                     },
-                               4000
-                                );*/
-
     }
 
 }

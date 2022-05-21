@@ -16,17 +16,17 @@ public class ReadFromFile {
     String directory;
     Scanner in;
 
-    public ReadFromFile( ){
+    public ReadFromFile() {
     }
 
-    public ReadFromFile( String dir, String namef){
+    public ReadFromFile(String dir, String namef) {
         this.nameFile = namef;
         this.directory = dir;
-    try{
-        in = new Scanner(new File(this.directory, this.nameFile));
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
-    }
+        try {
+            in = new Scanner(new File(this.directory, this.nameFile));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -39,12 +39,7 @@ public class ReadFromFile {
 
                 sArray = in.nextLine().split(",");
 
-                System.out.println("pwd sul file: "+sArray[3]);
-
                 String decryptedPassword = Encryption.decrypt(sArray[3]);
-
-                System.out.println(decryptedPassword);
-                System.out.println(sArray[2]);
 
                 if (username.getText().toString().equals(sArray[2]) && pass.getText().toString().equals(decryptedPassword)) {
                     trovato = true;

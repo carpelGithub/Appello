@@ -1,6 +1,9 @@
 package com.example.appello;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             });
 
         buttonLog.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             public void onClick(View view) {
 
                login();
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void login() {
 
         EditText username = (EditText) findViewById(R.id.username); //username

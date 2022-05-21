@@ -1,9 +1,7 @@
 package com.example.appello;
 
-
-import static com.example.appello.Encryption.createSecretKey;
-import static com.example.appello.Encryption.encrypt;
-
+import java.io.IOException;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.crypto.spec.SecretKeySpec;
 
 public class Registrazione extends AppCompatActivity {
 
@@ -28,7 +26,7 @@ public class Registrazione extends AppCompatActivity {
     EditText pwd1;
     EditText pwd2;
     Button btn;
-
+    Button btnTorna;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,17 +35,37 @@ public class Registrazione extends AppCompatActivity {
 
 
         btn = (Button) findViewById(R.id.buttonReg);
+        btnTorna = (Button) findViewById(R.id.buttonTorna);
+
         nome = (EditText) findViewById(R.id.nome);
         cognome = (EditText) findViewById(R.id.cognome);
         mail = (EditText) findViewById(R.id.email);
         pwd1 = (EditText) findViewById(R.id.pass1);
         pwd2 = (EditText) findViewById(R.id.pass2);
+
+        btnTorna.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                Intent openLogin = new Intent(Registrazione.this, MainActivity.class);
+                startActivity(openLogin);
+            }
+
+        });
         
         btn.setOnClickListener(new View.OnClickListener() {
 
-            @RequiresApi(api = Build.VERSION_CODES.N)
+            @RequiresApi(api = Build.VERSION_CODES.O)
             public void onClick(View v) {
                 try{
+    /* code di test OK
+                    String originalPassword = "pino";
+                    System.out.println("Original password: " + originalPassword);
+                    String encryptedPassword = config.encrypt(originalPassword);
+                    System.out.println("Encrypted password: " + encryptedPassword);
+                    String decryptedPassword = config.decrypt(encryptedPassword);
+                    System.out.println("Decrypted password: " + decryptedPassword);
+
+*/
 
                     if ( pwd1.getText().toString().equals(pwd2.getText().toString())){
 
@@ -58,33 +76,20 @@ public class Registrazione extends AppCompatActivity {
                         list.add(nome.getText().toString());
                         list.add(cognome.getText().toString());
                         list.add(mail.getText().toString());
-                        list.add(encryPassword(pwd1.getText().toString()));
+                        list.add(Encryption.encrypt(pwd1.getText().toString()));
 
                         String a  = list.stream().collect(Collectors.joining(","));
                         if (rf.WriteRegistration(a))
                             ((TextView) findViewById(R.id.passErr)).setText("Sei stato registrato!");;
                 }
+
+
                 } catch (IOException e) {
                     e.printStackTrace();
-                }
+                } catch (Exception e) {
+                e.printStackTrace();
+            }
             }});
-
-    }
-
-    public String encryPassword(String pwd){
-        byte[] salt = new String("24358977373").getBytes();
-        int iterationCount = 60000;
-        int keyLength = 128;
-        try {
-
-            SecretKeySpec key = createSecretKey(pwd.toCharArray(), salt, iterationCount, keyLength);
-            return encrypt(pwd, key);
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        return "";
-
 
     }
 }

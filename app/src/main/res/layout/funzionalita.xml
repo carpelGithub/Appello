@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/barra" />
+
+        <TextView
+            android:id='@+id/Salve'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:rotationX="-350"
+            android:fontFamily="cursive"
+            android:text="Benvenuto... "
+            android:textColor="#000000"
+            android:textSize="28sp" />
+
+
+        <TextView
+            android:id='@+id/Docente'
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+
+            android:layout_toEndOf="@id/Salve"
+            android:rotationX="-350"
+            android:fontFamily="cursive"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.utils.widget.MotionButton
+            android:id="@+id/btnAppello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="cursive"
+            android:onClick="true"
+            android:text="Appello"
+            android:textColor="#FFFFFF" />
+
+        <androidx.constraintlayout.utils.widget.MotionButton
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="cursive"
+            android:background="@drawable/custom_button"
+            android:baselineAligned="false"
+            android:text="Configurazione docente"
+            android:textColor="#FFFFFF" />
+
+        <androidx.constraintlayout.utils.widget.MotionButton
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="cursive"
+            android:background="@drawable/custom_button"
+            android:text="future ...."
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</RelativeLayout>

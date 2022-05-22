@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button buttonLog = (Button) findViewById(R.id.buttonLog) ; //Bottone Log In
-        Button buttonReg = (Button) findViewById(R.id.buttonReg) ; //Registarti
+        Button buttonReg = (Button) findViewById(R.id.buttonReg) ; //Registrati
+
 
         EditText username = (EditText) findViewById(R.id.username) ; //username
         EditText pass = (EditText) findViewById(R.id.pass) ; //password
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             });
+
+
 
         buttonLog.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -54,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         ReadFromFile rf = new ReadFromFile(getFilesDir().toString(), "config.txt");
 
         if (rf.isValidLogin(username, pass)) {
-            setContentView(R.layout.pag2);
+            Intent openfunz = new Intent(MainActivity.this, Funzionalita.class);
+            startActivity(openfunz);
+            //setContentView(R.layout.funzionalita);
             ((TextView) findViewById(R.id.Docente)).setText(username.getText().toString());
         } else {
             username.setText("");

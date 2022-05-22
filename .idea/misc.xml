@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/Funzionalita.xml" value="0.1118659420289855" />
         <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/barra.xml" value="0.14375" />
         <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/classi.xml" value="0.1" />
-        <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/login.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/pag2.xml" value="0.1" />
+        <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/funzionalita.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/login.xml" value="0.25" />
+        <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/pag2.xml" value="0.22" />
         <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/registrazione.xml" value="0.34763948497854075" />
         <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/registrazioneNew.xml" value="0.13177083333333334" />
         <entry key="..\:/Users/carol/AndroidStudioProjects/APPello/app/src/main/res/layout/sezioni_1_div.xml" value="0.22552083333333334" />

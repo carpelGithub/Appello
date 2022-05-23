@@ -14,7 +14,12 @@ import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected void onCreate(Bundle savedInstanceState) {
+    public void goToappello(View v){
+        Intent intent = new Intent(this, Classi.class);
+        startActivity(intent);
+    }
+
+     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState) ;
         setContentView(R.layout.login) ;
@@ -57,9 +62,8 @@ public class MainActivity extends AppCompatActivity {
         ReadFromFile rf = new ReadFromFile(getFilesDir().toString(), "config.txt");
 
         if (rf.isValidLogin(username, pass)) {
-            Intent openfunz = new Intent(MainActivity.this, Funzionalita.class);
-            startActivity(openfunz);
-            //setContentView(R.layout.funzionalita);
+
+            setContentView(R.layout.funzionalita);
             ((TextView) findViewById(R.id.Docente)).setText(username.getText().toString());
         } else {
             username.setText("");

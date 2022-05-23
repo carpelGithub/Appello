@@ -44,7 +44,7 @@
             android:layout_marginTop="80dp"
             android:background="@drawable/custom_button"
             android:fontFamily="cursive"
-            android:onClick="true"
+            android:onClick="goToappello"
             android:text="Appello"
             android:textColor="#FFFFFF" />
 

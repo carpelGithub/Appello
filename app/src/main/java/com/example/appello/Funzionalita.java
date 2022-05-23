@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Funzionalita extends AppCompatActivity {
 
+
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState) ;
